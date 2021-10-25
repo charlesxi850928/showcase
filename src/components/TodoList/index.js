@@ -1,35 +1,58 @@
 import React, {useState} from 'react'
 import {Paper} from '@mui/material'
+import {nanoid} from 'nanoid'
 import Header from './Header'
 import TodoListDisplay from './TodoListDisplay'
 import Footer from './Footer'
 
 const TodoList = () => {
   const [todoList, setTodoList] = useState([
-    {id: 1, name: 'Eat', isFinish: false},
-    {id: 2, name: 'Sleep', isFinish: false},
-    {id: 3, name: 'Coding', isFinish: true},
-    {id: 4, name: 'Haking', isFinish: false},
-    {id: 5, name: 'Play Basketball', isFinish: true},
-    {id: 6, name: 'Play Game', isFinish: false}
+    {id: nanoid(), name: 'Eat', isFinish: false},
+    {id: nanoid(), name: 'Sleep', isFinish: false},
+    {id: nanoid(), name: 'Coding', isFinish: true},
+    {id: nanoid(), name: 'Haking', isFinish: false},
+    {id: nanoid(), name: 'Play Basketball', isFinish: true},
+    {id: nanoid(), name: 'Play Game', isFinish: false}
   ])
-  const addTodoList = (todo) => {
-    const newTodoList = [...todoList, todo]
+  const handleAddTodo = (todo) => {
+    const newTodoList = [todo, ...todoList]
     setTodoList(newTodoList)
   }
-  const removeTodo = (id) => {
+  const handleToggleSelectTodo = (id) => {
+    const newTodoList = todoList.map((todo) => {
+      const isFinish = todo.id === id ? !todo.isFinish : todo.isFinish
+      const newTodo = {...todo, isFinish}
+      return newTodo
+    })
+    setTodoList(newTodoList)
+  }
+  const handleRemoveTodo = (id) => {
     const newTodoList = todoList.filter((todo) => todo.id !== id)
     setTodoList(newTodoList)
   }
-  const clearFinishTodoList = (ids) => {
-    const newTodoList = todoList.filter((todo) => !ids.contains(todo.id))
+  const handleClearCompletedTodoList = () => {
+    const newTodoList = todoList.filter((todo) => !todo.isFinish)
     setTodoList(newTodoList)
   }
+
+  const handleToggleSelectAllTodo = (isSelectedAll) => {
+    const newTodoList = todoList.map((todo) => ({...todo, isFinish: isSelectedAll}))
+    setTodoList(newTodoList)
+  }
+
   return (
     <Paper sx={{marginX: 50, marginY: 5, paddingX: 2, paddingY: 4}}>
-      <Header addTodoList={addTodoList} />
-      <TodoListDisplay todoList={todoList} removeTodo={removeTodo} />
-      <Footer todoList={todoList} clearFinishTodoList={clearFinishTodoList} />
+      <Header handleAddTodo={handleAddTodo} />
+      <TodoListDisplay
+        todoList={todoList}
+        handleToggleSelectTodo={handleToggleSelectTodo}
+        handleRemoveTodo={handleRemoveTodo}
+      />
+      <Footer
+        todoList={todoList}
+        handleToggleSelectAllTodo={handleToggleSelectAllTodo}
+        handleClearCompletedTodoList={handleClearCompletedTodoList}
+      />
     </Paper>
   )
 }

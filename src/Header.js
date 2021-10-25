@@ -14,7 +14,7 @@ const HomeLink = () => {
   }
   return (
     <Grid display='flex' alignItems='center'>
-      <a className='App-link' href='/home'>
+      <a className='App-link' href='/'>
         <img src={logo} style={{width: 100}} alt='logo' />
       </a>
       <Avatar
