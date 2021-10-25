@@ -1,8 +1,9 @@
-import logo from "./logo.svg"
-import "./App.css"
-import { useHistory } from "react-router-dom"
-import { Avatar, Grid, Paper } from "@mui/material"
-import { deepPurple, blue } from "@mui/material/colors"
+import {deepPurple, blue} from '@mui/material/colors'
+import './App.css'
+import {useHistory} from 'react-router-dom'
+import {Avatar, Grid, Paper} from '@mui/material'
+import logo from './logo.svg'
+
 const HomeLink = () => {
   const history = useHistory()
   const back = () => {
@@ -12,19 +13,19 @@ const HomeLink = () => {
     history.goForward()
   }
   return (
-    <Grid display="flex" alignItems="center">
-      <a className="App-link" href="/home">
-        <img src={logo} style={{ width: 100 }} alt="logo" />
+    <Grid display='flex' alignItems='center'>
+      <a className='App-link' href='/home'>
+        <img src={logo} style={{width: 100}} alt='logo' />
       </a>
       <Avatar
         onClick={back}
-        alt="Back"
+        alt='Back'
         sx={{
           bgcolor: deepPurple[500],
           width: 52,
           height: 52,
-          cursor: "pointer",
-          marginRight: 2.5,
+          cursor: 'pointer',
+          marginRight: 2.5
         }}
       >
         B
@@ -35,7 +36,7 @@ const HomeLink = () => {
           bgcolor: blue[500],
           width: 52,
           height: 52,
-          cursor: "pointer",
+          cursor: 'pointer'
         }}
       >
         P
@@ -44,13 +45,11 @@ const HomeLink = () => {
   )
 }
 HomeLink.propTypes = {}
-const Header = () => {
-  return (
-    <Paper>
-      <HomeLink />
-    </Paper>
-  )
-}
+const Header = () => (
+  <Paper>
+    <HomeLink />
+  </Paper>
+)
 Header.propTypes = {}
 
 export default Header

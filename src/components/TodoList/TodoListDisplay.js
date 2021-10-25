@@ -1,17 +1,9 @@
-import {
-  Box,
-  List,
-  ListItem,
-  ListItemText,
-  IconButton,
-  ListItemButton,
-  Checkbox,
-  ListItemIcon,
-} from "@mui/material"
-import { useState } from "react"
-import CommentIcon from "@mui/icons-material/Comment"
+import {Box, List, ListItem, ListItemText, IconButton, ListItemButton, Checkbox, ListItemIcon} from '@mui/material'
+import {useState} from 'react'
+import CommentIcon from '@mui/icons-material/Comment'
+import PropTypes from 'prop-types'
 
-const TodoListDisplay = ({ todoList }) => {
+const TodoListDisplay = ({todoList}) => {
   const [checked, setChecked] = useState([0])
 
   const handleToggle = (value) => () => {
@@ -35,24 +27,20 @@ const TodoListDisplay = ({ todoList }) => {
             <ListItem
               key={todo.id}
               secondaryAction={
-                <IconButton edge="end" aria-label="comments">
+                <IconButton edge='end' aria-label='comments'>
                   <CommentIcon />
                 </IconButton>
               }
               disablePadding
             >
-              <ListItemButton
-                role={undefined}
-                onClick={handleToggle(index)}
-                dense
-              >
+              <ListItemButton role={undefined} onClick={handleToggle(index)} dense>
                 <ListItemIcon>
                   <Checkbox
-                    edge="start"
+                    edge='start'
                     checked={checked.indexOf(index) !== -1}
                     tabIndex={-1}
                     disableRipple
-                    inputProps={{ "aria-labelledby": labelId }}
+                    inputProps={{'aria-labelledby': labelId}}
                   />
                 </ListItemIcon>
                 <ListItemText id={labelId} primary={todo.name} />
@@ -63,5 +51,8 @@ const TodoListDisplay = ({ todoList }) => {
       </List>
     </Box>
   )
+}
+TodoListDisplay.propTypes = {
+  todoList: PropTypes.string
 }
 export default TodoListDisplay

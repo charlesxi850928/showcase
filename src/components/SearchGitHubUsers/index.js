@@ -1,7 +1,6 @@
-import React from "react"
-import { Grid } from "@mui/material"
+import React from 'react'
+import {Grid} from '@mui/material'
 
-const SearchGitHubUsers = () => {
-  return <Grid></Grid>
-}
+const SearchGitHubUsers = () => <Grid>......</Grid>
+
 export default SearchGitHubUsers
