@@ -1,30 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-import {Link} from 'react-router-dom'
+import "./App.css"
+import { Route, Redirect } from "react-router-dom"
+import Home from "./components/Home"
+import { Grid, Box } from "@mui/material"
+import routes from "./routes"
+import Header from "./Header"
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Link
-          className="App-link"
-        >
-          Show Case
-        </Link>
-      </header>
-    </div>
-  );
+    <Box>
+      <Header />
+      <Grid>
+        <Route path="/home" component={Home} />
+        <Redirect to="/home" />
+        {routes.map((r, index) => {
+          return <Route key={index} path={r.path} component={r.component} />
+        })}
+      </Grid>
+    </Box>
+  )
 }
 
-export default App;
+export default App
