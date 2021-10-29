@@ -18,7 +18,7 @@ const ShowCase = () => (
           <ListItem key={route.name}>
             <Avatar
               sx={{
-                bgcolor: deepOrange[500],
+                bgcolor: deepOrange[900],
                 width: 32,
                 height: 32,
                 marginRight: 1
