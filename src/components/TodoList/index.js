@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
-import {Paper} from '@mui/material'
 import {nanoid} from 'nanoid'
 import Header from './Header'
 import TodoListDisplay from './TodoListDisplay'
 import Footer from './Footer'
+import APaper from '../shared/APaper'
 
 const TodoList = () => {
   const [todoList, setTodoList] = useState([
@@ -41,7 +41,7 @@ const TodoList = () => {
   }
 
   return (
-    <Paper sx={{marginX: 50, marginY: 5, paddingX: 2, paddingY: 4}}>
+    <APaper>
       <Header handleAddTodo={handleAddTodo} />
       <TodoListDisplay
         todoList={todoList}
@@ -53,7 +53,7 @@ const TodoList = () => {
         handleToggleSelectAllTodo={handleToggleSelectAllTodo}
         handleClearCompletedTodoList={handleClearCompletedTodoList}
       />
-    </Paper>
+    </APaper>
   )
 }
 

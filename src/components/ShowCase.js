@@ -1,14 +1,15 @@
 import React from 'react'
-import {Paper, List, ListItem, Box} from '@mui/material'
-import {Link} from 'react-router-dom'
+import {List, ListItem, Box, Typography} from '@mui/material'
+import {NavLink} from 'react-router-dom'
 import {deepOrange} from '@mui/material/colors'
 import Avatar from '@mui/material/Avatar'
 import {SHOW_CASE} from '../constants'
+import APaper from './shared/APaper'
 // eslint-disable-next-line import/no-cycle
 import routes from '../routes'
 
 const ShowCase = () => (
-  <Paper>
+  <APaper>
     <List>
       {routes.map((route, index) =>
         route.name === SHOW_CASE ? (
@@ -18,21 +19,21 @@ const ShowCase = () => (
             <Avatar
               sx={{
                 bgcolor: deepOrange[500],
-                width: 24,
-                height: 24,
+                width: 32,
+                height: 32,
                 marginRight: 1
               }}
             >
-              {index}
+              <Typography>{index < 10 ? `0${index}` : index}</Typography>
             </Avatar>
-            <Link className='App-link' to={route.path}>
-              {route.name}
-            </Link>
+            <NavLink to={route.path}>
+              <Typography>{route.name}</Typography>
+            </NavLink>
           </ListItem>
         )
       )}
     </List>
-  </Paper>
+  </APaper>
 )
 
 export default ShowCase
