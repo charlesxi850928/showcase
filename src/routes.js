@@ -8,6 +8,7 @@ const CardThumbnailInsWrapper = lazy(() => import('instancewrapper/CardThumbnail
 const GalleryInsWrapper = lazy(() => import('instancewrapper/GalleryInsWrapper'))
 const PopperWithArrowInsWrapper = lazy(() => import('instancewrapper/PopperWithArrowInsWrapper'))
 const CustomerHooksInsWrapper = lazy(() => import('instancewrapper/CustomerHooksInsWrapper'))
+const CarouselInsWrapper = lazy(() => import('instancewrapper/CarouselInsWrapper'))
 
 // eslint-disable-next-line import/no-cycle
 const ShowCase = lazy(() => import('./components/ShowCase'))
@@ -48,6 +49,11 @@ const routes = [
     name: 'Customer Hooks, Avatar, Badge',
     path: '/customerHooksIns',
     component: CustomerHooksInsWrapper
+  },
+  {
+    name: 'Carousel',
+    path: '/carousel',
+    component: CarouselInsWrapper
   }
 ]
 export default routes

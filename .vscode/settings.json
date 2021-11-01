@@ -3,6 +3,9 @@
         "codemirror",
         "copyfiles",
         "cpcodemirror",
-        "instancewrapper"
+        "instancewrapper",
+        "labelledby",
+        "NOAA",
+        "Spitzer"
     ]
 }

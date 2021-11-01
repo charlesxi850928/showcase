@@ -36,10 +36,10 @@ async function fetchCodes(name, extraCodePaths) {
   lines.forEach((line) => {
     let fileName = ''
     if (line.endsWith('.js')) {
-      fileName = `${line.substring(line.lastIndexOf('/') + 1)}.js`
+      fileName = `${line.substring(line.lastIndexOf('/') + 1)}`
       path = line
     } else {
-      fileName = `${line.substring(line.lastIndexOf('/') + 1, line.lastIndexOf("'"))}.js`
+      fileName = `${line.substring(line.lastIndexOf('/') + 1, line.lastIndexOf("'"))}`
       path = line.substring(line.indexOf("'") + 1, line.lastIndexOf("'"))
     }
     codes.push({
