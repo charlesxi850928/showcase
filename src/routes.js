@@ -1,12 +1,14 @@
 import {lazy} from 'react'
 import {SHOW_CASE} from './constants'
 
-const TodoList = lazy(() => import('./components/TodoList'))
-const TimerIns = lazy(() => import('./components/TimerIns'))
-const DefaultImageIns = lazy(() => import('./components/DefaultImageIns'))
-const CardThumbnailIns = lazy(() => import('./components/CardThumbnailIns'))
-const GalleryIns = lazy(() => import('./components/GalleryIns'))
-const PopperWithArrowIns = lazy(() => import('./components/PopperWithArrowIns'))
+const TodoListWrapper = lazy(() => import('instancewrapper/TodoListWrapper'))
+const TimerInsWrapper = lazy(() => import('instancewrapper/TimerInsWrapper'))
+const DefaultImageInsWrapper = lazy(() => import('instancewrapper/DefaultImageInsWrapper'))
+const CardThumbnailInsWrapper = lazy(() => import('instancewrapper/CardThumbnailInsWrapper'))
+const GalleryInsWrapper = lazy(() => import('instancewrapper/GalleryInsWrapper'))
+const PopperWithArrowInsWrapper = lazy(() => import('instancewrapper/PopperWithArrowInsWrapper'))
+const CustomerHooksInsWrapper = lazy(() => import('instancewrapper/CustomerHooksInsWrapper'))
+
 // eslint-disable-next-line import/no-cycle
 const ShowCase = lazy(() => import('./components/ShowCase'))
 
@@ -15,32 +17,37 @@ const routes = [
   {
     name: 'Todo List',
     path: '/todoList',
-    component: TodoList
+    component: TodoListWrapper
   },
   {
     name: 'Timer',
     path: '/Timer',
-    component: TimerIns
+    component: TimerInsWrapper
   },
   {
     name: 'Default Image',
     path: '/defaultImage',
-    component: DefaultImageIns
+    component: DefaultImageInsWrapper
   },
   {
     name: 'Card Thumbnail',
     path: '/cardThumbnail',
-    component: CardThumbnailIns
+    component: CardThumbnailInsWrapper
   },
   {
     name: 'Gallery',
     path: '/gallery',
-    component: GalleryIns
+    component: GalleryInsWrapper
   },
   {
     name: 'Popper With Arrow',
     path: '/popperWithArrow',
-    component: PopperWithArrowIns
+    component: PopperWithArrowInsWrapper
+  },
+  {
+    name: 'Customer Hooks, Avatar, Badge',
+    path: '/customerHooksIns',
+    component: CustomerHooksInsWrapper
   }
 ]
 export default routes
