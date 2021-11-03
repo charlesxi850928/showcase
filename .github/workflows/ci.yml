@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@master
+
+      - name: Install node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.16.1'
+
+      - name: Install dependency packages
+        run: npm install
+
+      - name: build package
+        run: npm run build
+
+      - name: Send to aliyun
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          #Private Key
+          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          #SCP Parameter
+          ARGS: '-rltgoDzvO --delete'
+          #Source Directory
+          SOURCE: 'build/'
+          #Server IP
+          REMOTE_HOST: '121.89.239.82'
+          #User
+          REMOTE_USER: 'root'
+          #Desc Directory
+          TARGET: '/var/www/showcase'
