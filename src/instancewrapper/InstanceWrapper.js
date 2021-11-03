@@ -13,7 +13,7 @@ async function getCode(path) {
   }
   let response = await fetch(newPath)
   let code = await response.text()
-  if (code.indexOf('<!DOCTYPE html>') > -1) {
+  if (code?.toLocaleLowerCase()?.indexOf('<!doctype html>') > -1) {
     newPath = `${path}/index.js`
     response = await fetch(newPath)
     code = await response.text()
