@@ -8,7 +8,9 @@ import APaper from 'components/shared/APaper'
 
 async function getCode(path) {
   let newPath = path
-  if (newPath.indexOf('.js') < 0) {
+  if (newPath.indexOf('.scss') > -1) {
+    newPath = path
+  } else if (newPath.indexOf('.js') < 0) {
     newPath = `${path}.js`
   }
   let response = await fetch(newPath)
@@ -37,6 +39,9 @@ async function fetchCodes(name, extraCodePaths) {
     let fileName = ''
     if (line.endsWith('.js')) {
       fileName = `${line.substring(line.lastIndexOf('/') + 1)}`
+      path = line
+    } else if (line.endsWith('.scss')) {
+      fileName = `${line.substring(line.lastIndexOf('/') + 1, line.lastIndexOf('.scss') + 5)}`
       path = line
     } else {
       fileName = `${line.substring(line.lastIndexOf('/') + 1, line.lastIndexOf("'"))}`

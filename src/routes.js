@@ -9,6 +9,7 @@ const GalleryInsWrapper = lazy(() => import('instancewrapper/GalleryInsWrapper')
 const PopperWithArrowInsWrapper = lazy(() => import('instancewrapper/PopperWithArrowInsWrapper'))
 const CustomerHooksInsWrapper = lazy(() => import('instancewrapper/CustomerHooksInsWrapper'))
 const CarouselInsWrapper = lazy(() => import('instancewrapper/CarouselInsWrapper'))
+const ScrollCardInsWrapper = lazy(() => import('instancewrapper/ScrollCardInsWrapper'))
 
 // eslint-disable-next-line import/no-cycle
 const ShowCase = lazy(() => import('./components/ShowCase'))
@@ -54,6 +55,11 @@ const routes = [
     name: 'Carousel',
     path: '/carousel',
     component: CarouselInsWrapper
+  },
+  {
+    name: 'Scroll Card',
+    path: '/scrollCard',
+    component: ScrollCardInsWrapper
   }
 ]
 export default routes
