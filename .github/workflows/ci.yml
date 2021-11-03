@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@master
 
       - name: Install node.js
@@ -20,10 +20,10 @@ jobs:
       - name: Install dependency packages
         run: npm install
 
-      - name: build package
+      - name: Build package
         run: npm run build
 
-      - name: Send to aliyun
+      - name: Send package to aliyun
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
           #Private Key
@@ -31,7 +31,7 @@ jobs:
           #SCP Parameter
           ARGS: '-rltgoDzvO --delete'
           #Source Directory
-          SOURCE: 'build'
+          SOURCE: 'build/'
           #Server IP
           REMOTE_HOST: '121.89.239.82'
           #User
