@@ -7,7 +7,6 @@ const Home = () => (
     <header className='App-header'>
       <img src={logo} className='App-logo' alt='logo' />
       <Link className='App-link' to='/showCase'>
-        1111
         {SHOW_CASE}
       </Link>
     </header>
