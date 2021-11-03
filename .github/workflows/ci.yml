@@ -31,7 +31,7 @@ jobs:
           #SCP Parameter
           ARGS: '-rltgoDzvO --delete'
           #Source Directory
-          SOURCE: 'build/'
+          SOURCE: 'build'
           #Server IP
           REMOTE_HOST: '121.89.239.82'
           #User
