@@ -98,7 +98,7 @@ const InstanceWrapper = ({name, comp, extraCodePaths = []}) => {
                   aria-controls={`panel${index}a-content`}
                   id={`panel${index}a-header`}
                 >
-                  <Typography sx={{fontWeight: 600}}>{`${code.name} - ${code.path}`}</Typography>
+                  <Typography sx={{fontWeight: 600}}>{`${code.name}`}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <ACodeMirror code={code.code} />
