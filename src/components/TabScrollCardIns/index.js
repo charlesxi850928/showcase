@@ -1,106 +1,91 @@
 import APaper from 'components/shared/APaper'
-import ScrollCard from 'components/shared/ScrollCard'
+import TabScrollCard from 'components/shared/TabScrollCard'
+import {nanoid} from 'nanoid'
 
 const ScrollCardIns = () => {
   const cardInfoList = [
     {
-      id: '1',
+      id: nanoid(),
       imgUrl: 'assets/images/carousel/1.jpg',
-      title: 'Composite image of southern Africa',
-      description: `Composite image of southern Africa and the surrounding oceans 
-          captured by six orbits of the NASA/NOAA Suomi National Polar-orbiting Partnership spacecraft`
+      title: 'Composite image of southern Africa'
     },
     {
-      id: '2',
+      id: nanoid(),
       imgUrl: 'assets/images/carousel/2.jpg',
-      title: 'Hubble Space Telescope',
-      description: `Hubble Space Telescope, the Spitzer Space Telescope, and the Chandra X-ray 
-          Observatory produced a matched trio of images of the central region of our Milky Way galaxy`
+      title: 'Hubble Space Telescope'
     },
     {
-      id: '3',
+      id: nanoid(),
       imgUrl: 'assets/images/carousel/3.jpg',
-      title: 'Hubble Space Telescope',
-      description: 'Hubble space telescope captures vivid auroras in Jupiter’s atmosphere'
+      title: 'Hubble Space Telescope'
     },
     {
-      id: '4',
+      id: nanoid(),
       imgUrl: 'assets/images/carousel/4.png',
       title: 'Mast Camera (Mastcam)',
       description: `This view from the Mast Camera (Mastcam) in NASA’s Curiosity Mars rover shows an 
           outcrop with finely layered rocks within the ‘Murray Buttes’ region on lower Mount Sharp`
     },
     {
-      id: '5',
+      id: nanoid(),
       imgUrl: 'assets/images/carousel/5.jpg',
       title: 'Mystic Mountain',
       description: 'Hubble space telescope captures Mystic Mountain in the Carina Nebula'
     },
     {
-      id: '6',
+      id: nanoid(),
       imgUrl: 'assets/images/carousel/6.jpg',
       title: 'Jupiter A',
       description: `This view of Jupiter was taken by Voyager 1. This image was taken through color filters 
           and recombined to produce the color image`
     },
     {
-      id: '7',
+      id: nanoid(),
       imgUrl: 'assets/images/carousel/7.jpg',
-      title: 'Jupiter B',
-      description:
-        'This view of Jupiter was taken by Voyager 1. This image was taken through color filters and recombined to produce the color image'
+      title: 'Jupiter B'
     },
     {
-      id: '8',
+      id: nanoid(),
       imgUrl: 'assets/images/carousel/8.jpg',
-      title: 'Jupiter C',
       description:
         'This view of Jupiter was taken by Voyager 1. This image was taken through color filters and recombined to produce the color image'
     },
     {
-      id: '9',
+      id: nanoid(),
       imgUrl: 'assets/images/carousel/9.jpg',
       title: 'Jupiter D',
       description:
         'This view of Jupiter was taken by Voyager 1. This image was taken through color filters and recombined to produce the color image'
     },
     {
-      id: '10',
-      imgUrl: 'assets/images/carousel/10.jpg',
-      title: 'Jupiter E',
-      description:
-        'This view of Jupiter was taken by Voyager 1. This image was taken through color filters and recombined to produce the color image'
+      id: nanoid(),
+      imgUrl: 'assets/images/carousel/10.jpg'
     },
     {
-      id: '11',
+      id: nanoid(),
       imgUrl: 'assets/images/carousel/11.jpg',
-      title: 'Jupiter F',
-      description:
-        'This view of Jupiter was taken by Voyager 1. This image was taken through color filters and recombined to produce the color image'
+      title: 'Jupiter F'
     },
     {
-      id: '12',
+      id: nanoid(),
       imgUrl: 'assets/images/carousel/12.jpg',
-      title: 'Jupiter G',
       description:
         'This view of Jupiter was taken by Voyager 1. This image was taken through color filters and recombined to produce the color image'
     },
     {
-      id: '13',
+      id: nanoid(),
       imgUrl: 'assets/images/carousel/13.jpg',
-      title: 'Jupiter H',
-      description:
-        'This view of Jupiter was taken by Voyager 1. This image was taken through color filters and recombined to produce the color image'
+      title: 'Jupiter H'
     },
     {
-      id: '14',
+      id: nanoid(),
       imgUrl: 'assets/images/carousel/14.jpeg',
       title: 'Jupiter I',
       description:
         'This view of Jupiter was taken by Voyager 1. This image was taken through color filters and recombined to produce the color image'
     },
     {
-      id: '15',
+      id: nanoid(),
       imgUrl: 'assets/images/carousel/15.jpg',
       title: 'Jupiter J',
       description:
@@ -108,9 +93,28 @@ const ScrollCardIns = () => {
     }
   ]
 
-  const cardData = {
-    cardTitle: 'Space Images',
-    cardInfoList
+  const cardInfoGroup = []
+  cardInfoGroup.push({name: 'All Images', cardInfoList: cardInfoList.map((card) => ({...card, id: nanoid()}))})
+  cardInfoGroup.push({
+    name: 'All Reverse Images',
+    cardInfoList: cardInfoList.map((card) => ({...card, id: nanoid()})).reverse()
+  })
+  cardInfoGroup.push({
+    name: 'Jupiter',
+    cardInfoList: cardInfoList
+      .map((card) => ({...card, id: nanoid()}))
+      .filter((card) => card.title?.indexOf('Jupiter') > -1)
+  })
+  cardInfoGroup.push({
+    name: 'Hubble Space',
+    cardInfoList: cardInfoList
+      .map((card) => ({...card, id: nanoid()}))
+      .filter((card) => card.title?.indexOf('Hubble Space') > -1)
+  })
+
+  const cardInfoGroupData = {
+    cardTitle: 'Groups Space Images',
+    cardInfoGroup
   }
 
   const handleCardClick = (cardInfo) => {
@@ -119,8 +123,8 @@ const ScrollCardIns = () => {
   }
 
   return (
-    <APaper>
-      <ScrollCard lg={3} buttonPosition='topRight' cardData={cardData} handleCardClick={handleCardClick} />
+    <APaper sx={{paddingX: {xs: '1rem', md: '4rem'}}}>
+      <TabScrollCard cardInfoGroupData={cardInfoGroupData} handleCardClick={handleCardClick} />
     </APaper>
   )
 }

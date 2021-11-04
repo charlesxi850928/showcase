@@ -10,6 +10,7 @@ const PopperWithArrowInsWrapper = lazy(() => import('instancewrapper/PopperWithA
 const CustomerHooksInsWrapper = lazy(() => import('instancewrapper/CustomerHooksInsWrapper'))
 const CarouselInsWrapper = lazy(() => import('instancewrapper/CarouselInsWrapper'))
 const ScrollCardInsWrapper = lazy(() => import('instancewrapper/ScrollCardInsWrapper'))
+const TabScrollCardInsWrapper = lazy(() => import('instancewrapper/TabScrollCardInsWrapper'))
 
 // eslint-disable-next-line import/no-cycle
 const ShowCase = lazy(() => import('./components/ShowCase'))
@@ -60,6 +61,11 @@ const routes = [
     name: 'Scroll Card',
     path: '/scrollCard',
     component: ScrollCardInsWrapper
+  },
+  {
+    name: 'Tab Scroll Card',
+    path: '/tabScrollCard',
+    component: TabScrollCardInsWrapper
   }
 ]
 export default routes

@@ -43,9 +43,12 @@ async function fetchCodes(name, extraCodePaths) {
     } else if (line.endsWith('.scss')) {
       fileName = `${line.substring(line.lastIndexOf('/') + 1, line.lastIndexOf('.scss') + 5)}`
       path = line
-    } else {
+    } else if (line.indexOf("'") > -1) {
       fileName = `${line.substring(line.lastIndexOf('/') + 1, line.lastIndexOf("'"))}`
       path = line.substring(line.indexOf("'") + 1, line.lastIndexOf("'"))
+    } else {
+      fileName = `${line.substring(line.lastIndexOf('/') + 1)}`
+      path = `${line}/index.js`
     }
     codes.push({
       name: fileName,

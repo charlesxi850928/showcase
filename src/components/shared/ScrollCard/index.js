@@ -5,40 +5,43 @@ import ACard from 'components/shared/ACard'
 import ScrollWrapper from './ScrollWrapper'
 import Draggable from './Draggable'
 
-const children = (cardInfoList) => cardInfoList?.map((cardInfo) => <ACard cardInfo={cardInfo} key={cardInfo.id} />)
+const children = (cardInfoList, handleCardClick) =>
+  cardInfoList?.map((cardInfo) => <ACard cardInfo={cardInfo} key={cardInfo.id} handleCardClick={handleCardClick} />)
 
 const ScrollCard = (props) => {
-  const {cardData} = props
+  const {cardData, handleCardClick} = props
+  const {cardTitle, cardInfoList} = cardData
 
   const {isDesktopDownView, isDesktopView} = useDeviceView()
   return (
     <>
-      {cardData?.cardTitle && (
+      {cardTitle && (
         <Typography
           variant='h5'
           component='h2'
           sx={{paddingY: '0.8rem', paddingX: {xs: '0rem', md: '0.5rem'}}}
           dataRef='space-images'
         >
-          {cardData.cardTitle}
+          {cardTitle}
         </Typography>
       )}
       {isDesktopDownView && (
         <Draggable sx={{display: 'flex', flexWrap: 'nowrap', pb: 1}}>
-          {children(cardData.cardInfoList)?.map((item) => (
+          {children(cardInfoList, handleCardClick)?.map((item) => (
             <Box sx={{flexShrink: 0, mr: 2, maxWidth: '17rem'}} key={item.key}>
               {item}
             </Box>
           ))}
         </Draggable>
       )}
-      {isDesktopView && <ScrollWrapper {...props}>{children(cardData.cardInfoList)}</ScrollWrapper>}
+      {isDesktopView && <ScrollWrapper {...props}>{children(cardInfoList, handleCardClick)}</ScrollWrapper>}
     </>
   )
 }
 
 ScrollCard.propTypes = {
-  cardData: PropTypes.object
+  cardData: PropTypes.object.isRequired,
+  handleCardClick: PropTypes.func
 }
 
 export default ScrollCard

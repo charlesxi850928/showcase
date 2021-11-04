@@ -142,7 +142,7 @@ const SlideNav = ({
             {slides.map((image, index) => (
               <SlideNavItem
                 // eslint-disable-next-line react/no-array-index-key
-                key={index}
+                key={`${index}`}
                 isCurrent={index === currentIndex}
                 onClick={() => {
                   dispatch({type: 'GOTO', index})
