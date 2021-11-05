@@ -30,8 +30,8 @@ const Footer = ({todoList, handleToggleSelectAllTodo, handleClearCompletedTodoLi
             />
           </FormGroup>
         </Grid>
-        <Grid>
-          <Button variant='outlined' onClick={handleClearCompletedTodoList}>
+        <Grid sx={{width: {xs: '100%', md: 'auto'}}}>
+          <Button fullWidth variant='outlined' onClick={handleClearCompletedTodoList}>
             <Typography>Clear Completed Tasks</Typography>
           </Button>
         </Grid>
