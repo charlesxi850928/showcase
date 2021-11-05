@@ -140,7 +140,7 @@ const ScrollWrapper = (props) => {
         <Box
           sx={{
             position: 'absolute',
-            right: '0rem',
+            right: '0.5rem',
             top: '-3rem',
             width: `calc(${buttonSize} + 0.5rem)`,
             height: buttonSize,

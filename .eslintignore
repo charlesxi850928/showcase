@@ -4,6 +4,8 @@
 # production
 /build
 
+/public/components
+
 # misc
 .DS_Store
 *.pem

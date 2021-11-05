@@ -103,13 +103,13 @@ const ScrollCardIns = () => {
     name: 'Jupiter',
     cardInfoList: cardInfoList
       .map((card) => ({...card, id: nanoid()}))
-      .filter((card) => card.title.indexOf('Jupiter') > -1)
+      .filter((card) => card.title?.indexOf('Jupiter') > -1)
   })
   cardInfoGroup.push({
     name: 'Hubble Space',
     cardInfoList: cardInfoList
       .map((card) => ({...card, id: nanoid()}))
-      .filter((card) => card.title.indexOf('Hubble Space') > -1)
+      .filter((card) => card.title?.indexOf('Hubble Space') > -1)
   })
 
   const cardInfoGroupData = {
@@ -123,7 +123,7 @@ const ScrollCardIns = () => {
   }
 
   return (
-    <APaper sx={{paddingX: '5rem'}}>
+    <APaper sx={{paddingX: {xs: '1rem', md: '4rem'}}}>
       <TabScrollCard cardInfoGroupData={cardInfoGroupData} handleCardClick={handleCardClick} />
     </APaper>
   )

@@ -24,11 +24,13 @@
     "react-codemirror2-react-17": "^1.0.0",
     "react-countdown": "^2.3.2",
     "react-dom": "^17.0.2",
+    "react-pannellum": "^0.2.6",
     "react-redux": "^7.2.6",
     "react-router": "^5.2.1",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "webpack-bundle-analyzer": "^4.5.0"
   },
   "devDependencies": {
     "babel-plugin-import": "^1.13.3",
@@ -50,7 +52,8 @@
     "deploy": "npm run cpcodemirror && npm run build",
     "cpcodemirror": "copyfiles -u 1 src/components/** public",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build --stats",
+    "analyze": "webpack-bundle-analyzer build/bundle-stats.json",
     "test": "react-scripts --openssl-legacy-provider test",
     "eject": "react-scripts eject"
   },

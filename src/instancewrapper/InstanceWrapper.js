@@ -61,7 +61,7 @@ async function fetchCodes(name, extraCodePaths) {
 }
 
 const InstanceWrapper = ({name, comp, extraCodePaths = []}) => {
-  const [expanded, setExpanded] = useState('panel0')
+  const [expanded, setExpanded] = useState('panel-0')
   const [codes, setCodes] = useState(null)
 
   const handleChange = (panel, code) => async (event, newExpanded) => {

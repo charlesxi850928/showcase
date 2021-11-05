@@ -84,12 +84,6 @@ const CarouselIns = () => {
       title: 'Jupiter I',
       content:
         'This view of Jupiter was taken by Voyager 1. This image was taken through color filters and recombined to produce the color image'
-    },
-    {
-      url: 'assets/images/carousel/15.jpg',
-      title: 'Jupiter J',
-      content:
-        'This view of Jupiter was taken by Voyager 1. This image was taken through color filters and recombined to produce the color image'
     }
   ]
   return (

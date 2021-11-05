@@ -33,14 +33,14 @@ const ACard = ({cardInfo, handleCardClick}) => {
             <Typography
               variant='h7'
               component='h3'
-              dataRef={`park-name-${id}`}
+              date-ref={`park-name-${id}`}
               sx={{overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}
             >
               {title}
             </Typography>
           )}
           {description && (
-            <Typography variant='body3' color='textSecondary' sx={styles.content}>
+            <Typography variant='body3' color='textSecondary' className={styles.content}>
               {description}
             </Typography>
           )}

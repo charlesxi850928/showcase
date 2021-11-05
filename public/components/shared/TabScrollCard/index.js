@@ -45,12 +45,12 @@ const TabScrollCard = (props) => {
   }
 
   return (
-    <Box>
+    <Box {...props}>
       <Typography
         variant='h5'
         component='h2'
         sx={{paddingY: '0.8rem', paddingX: {xs: '0rem', md: '0.5rem'}}}
-        dataRef='space-images'
+        date-ref='space-images'
       >
         {cardTitle}
       </Typography>
@@ -62,6 +62,7 @@ const TabScrollCard = (props) => {
           aria-label={`${cardTitle}`}
           sx={{
             minHeight: 'auto',
+            paddingX: '0.5rem',
             '& .MuiTab-root': {
               p: 0,
               mr: 3.8,
@@ -93,9 +94,9 @@ const TabScrollCard = (props) => {
           ))}
         </TabList>
 
-        {cardInfoGroup.map((item, index) => (
-          <TabPanel value={`${index}`} sx={{p: 0, my: 2}} key={item.name}>
-            <ScrollCard>{children(cardInfoGroup[index]?.cardInfoList, handleCardClick)}</ScrollCard>
+        {cardInfoGroup.map((group, index) => (
+          <TabPanel value={`${index}`} sx={{p: 0, my: 2}} key={group.name}>
+            <ScrollCard cardData={group} handleCardClick={handleCardClick} />
           </TabPanel>
         ))}
       </TabContext>
