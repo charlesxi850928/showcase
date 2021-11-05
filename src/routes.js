@@ -11,6 +11,7 @@ const CustomerHooksInsWrapper = lazy(() => import('instancewrapper/CustomerHooks
 const CarouselInsWrapper = lazy(() => import('instancewrapper/CarouselInsWrapper'))
 const ScrollCardInsWrapper = lazy(() => import('instancewrapper/ScrollCardInsWrapper'))
 const TabScrollCardInsWrapper = lazy(() => import('instancewrapper/TabScrollCardInsWrapper'))
+const Photos360DegreeInsWrapper = lazy(() => import('instancewrapper/Photos360DegreeInsWrapper'))
 
 // eslint-disable-next-line import/no-cycle
 const ShowCase = lazy(() => import('./components/ShowCase'))
@@ -66,6 +67,11 @@ const routes = [
     name: 'Tab Scroll Card',
     path: '/tabScrollCard',
     component: TabScrollCardInsWrapper
+  },
+  {
+    name: 'Photos 360 Degree',
+    path: '/photos360Degree',
+    component: Photos360DegreeInsWrapper
   }
 ]
 export default routes
