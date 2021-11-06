@@ -13,6 +13,8 @@ const ScrollCardInsWrapper = lazy(() => import('instancewrapper/ScrollCardInsWra
 const TabScrollCardInsWrapper = lazy(() => import('instancewrapper/TabScrollCardInsWrapper'))
 const Photos360DegreeInsWrapper = lazy(() => import('instancewrapper/Photos360DegreeInsWrapper'))
 const CardsInsWrapper = lazy(() => import('instancewrapper/CardsInsWrapper'))
+const AnimationRadarInsWrapper = lazy(() => import('instancewrapper/AnimationRadarInsWrapper'))
+const AnimationShootingStarsInsWrapper = lazy(() => import('instancewrapper/AnimationShootingStarsInsWrapper'))
 
 // eslint-disable-next-line import/no-cycle
 const ShowCase = lazy(() => import('./components/ShowCase'))
@@ -78,6 +80,16 @@ const routes = [
     name: 'Photos 360 Degree',
     path: '/photos360Degree',
     component: Photos360DegreeInsWrapper
+  },
+  {
+    name: 'Animation Radar',
+    path: '/animationRadar',
+    component: AnimationRadarInsWrapper
+  },
+  {
+    name: 'Animation Shooting Stars',
+    path: '/animationShootingStars',
+    component: AnimationShootingStarsInsWrapper
   }
 ]
 export default routes

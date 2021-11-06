@@ -1,16 +1,13 @@
-import {useState, useCallback} from 'react'
-import {Close} from '@mui/icons-material'
-import {Dialog, Box, IconButton, Button, Typography} from '@mui/material'
+import {useState} from 'react'
+import {Button, Typography} from '@mui/material'
 import APaper from 'components/shared/APaper'
 import Gallery from 'components/shared/Gallery'
+import FullScreenDialog from 'components/shared/FullScreenDialog'
 import useDeviceView from 'hooks/useDeviceView'
 
 const GalleryIns = () => {
-  const {isDesktopView, isDesktopDownView} = useDeviceView()
   const [openGallery, setOpenGallery] = useState(true)
-  const closeGalleryHandler = useCallback(() => {
-    setOpenGallery(false)
-  }, [])
+  const {isDesktopView, isDesktopDownView} = useDeviceView()
   const imageList = [
     {
       url: 'assets/images/gallery-tmp/1.jpg',
@@ -100,58 +97,14 @@ const GalleryIns = () => {
       <Button onClick={() => setOpenGallery(true)}>
         <Typography>View Images</Typography>
       </Button>
-      <Dialog
-        fullScreen
-        open={openGallery}
-        onClose={closeGalleryHandler}
-        maxWidth='xl'
-        PaperProps={{
-          'aria-label': 'gallery dialog',
-          sx: {
-            backgroundColor: 'common.black',
-            margin: 'unset',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexGrow: 1
-          }
-        }}
-      >
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            maxWidth: {xs: 'unset', md: '98vh'},
-            minHeight: {xs: '100%', md: 'unset'},
-            '& .gallery': {
-              display: 'flex',
-              flexGrow: 1,
-              flexDirection: 'column',
-              justifyContent: 'center'
-            }
-          }}
-        >
-          <IconButton
-            sx={{
-              minHeight: '3rem',
-              color: 'common.white',
-              alignSelf: 'flex-end',
-              right: {xs: 0, md: '0.5rem'},
-              position: 'absolute',
-              top: 0
-            }}
-            onClick={closeGalleryHandler}
-            aria-label='close gallery'
-          >
-            <Close sx={{fontSize: (isDesktopView && '3rem') || (isDesktopDownView && '2.1rem')}} />
-          </IconButton>
-          <Gallery
-            imageList={imageList}
-            thumbnailList={thumbnailList}
-            dragEnabled={isDesktopDownView}
-            showThumbnail={isDesktopView}
-          />
-        </Box>
-      </Dialog>
+      <FullScreenDialog name='gallery' openDialog={openGallery} setOpenDialog={setOpenGallery}>
+        <Gallery
+          imageList={imageList}
+          thumbnailList={thumbnailList}
+          dragEnabled={isDesktopDownView}
+          showThumbnail={isDesktopView}
+        />
+      </FullScreenDialog>
     </APaper>
   )
 }
