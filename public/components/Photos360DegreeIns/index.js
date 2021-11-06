@@ -37,13 +37,14 @@ const Photos360DegreeIns = () => {
           id='cube_map'
           config={{
             autoRotate: -2,
+            compass: true,
             author: 'Charles Xi',
             title: 'Photos 360 Degree Instance',
             description: 'Photos 360 Degree Instance Description for sample',
             uiText: {
               loadButtonLabel: 'Click to<br>Load<br>Photo',
               loadingLabel: 'Loading...',
-              bylineLabel: 'by %s',
+              bylineLabel: 'Shared by %s',
               noPanoramaError: 'No image was specified.',
               fileAccessError: 'The file %s could not be accessed.',
               malformedURLError: 'There is something wrong with the image URL.',

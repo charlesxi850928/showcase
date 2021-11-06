@@ -41,6 +41,16 @@ const GalleryIns = () => {
       url: 'assets/images/gallery-tmp/6.jpg',
       alt: 'Burling Game State Park 6',
       displayOrder: 6
+    },
+    {
+      url: 'assets/images/gallery-tmp/7.jpg',
+      alt: 'Burling Game State Park 7',
+      displayOrder: 7
+    },
+    {
+      url: 'assets/images/gallery-tmp/8.jpg',
+      alt: 'Burling Game State Park 8',
+      displayOrder: 8
     }
   ]
   const thumbnailList = [
@@ -73,6 +83,16 @@ const GalleryIns = () => {
       url: 'assets/images/card-thumbnail-tmp/6/180x120.jpg',
       alt: 'Burling Game State Park 6',
       displayOrder: 6
+    },
+    {
+      url: 'assets/images/card-thumbnail-tmp/7/180x120.jpg',
+      alt: 'Burling Game State Park 7',
+      displayOrder: 7
+    },
+    {
+      url: 'assets/images/card-thumbnail-tmp/8/180x120.jpg',
+      alt: 'Burling Game State Park 8',
+      displayOrder: 8
     }
   ]
   return (

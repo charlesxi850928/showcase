@@ -20,7 +20,7 @@ const ScrollCard = (props) => {
           variant='h5'
           component='h2'
           sx={{paddingY: '0.8rem', paddingX: {xs: '0rem', md: '0.5rem'}}}
-          dataRef='space-images'
+          data-ref='scroll-card-images'
         >
           {cardTitle}
         </Typography>

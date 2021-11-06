@@ -12,6 +12,7 @@ const CarouselInsWrapper = lazy(() => import('instancewrapper/CarouselInsWrapper
 const ScrollCardInsWrapper = lazy(() => import('instancewrapper/ScrollCardInsWrapper'))
 const TabScrollCardInsWrapper = lazy(() => import('instancewrapper/TabScrollCardInsWrapper'))
 const Photos360DegreeInsWrapper = lazy(() => import('instancewrapper/Photos360DegreeInsWrapper'))
+const CardsInsWrapper = lazy(() => import('instancewrapper/CardsInsWrapper'))
 
 // eslint-disable-next-line import/no-cycle
 const ShowCase = lazy(() => import('./components/ShowCase'))
@@ -57,6 +58,11 @@ const routes = [
     name: 'Carousel',
     path: '/carousel',
     component: CarouselInsWrapper
+  },
+  {
+    name: 'Cards',
+    path: '/cards',
+    component: CardsInsWrapper
   },
   {
     name: 'Scroll Card',
