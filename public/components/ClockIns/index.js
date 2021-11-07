@@ -35,8 +35,8 @@ const ClockIns = () => {
           },
           '& .box': isDesktopDownView
             ? {
-                width: '375px !important',
-                height: '375px !important'
+                width: '325px !important',
+                height: '325px !important'
               }
             : {}
         }}
