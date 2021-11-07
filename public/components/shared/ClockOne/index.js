@@ -15,7 +15,7 @@ const getCurrentTimeRatateZ = () => {
   }
 }
 
-const ClockThree = () => {
+const ClockOne = () => {
   const initRotateZ = getCurrentTimeRatateZ()
   const [hrTransform, setHRTransform] = useState(initRotateZ.hrRotateZ)
   const [mnTransform, setMNTransform] = useState(initRotateZ.mnRotateZ)
@@ -36,28 +36,23 @@ const ClockThree = () => {
 
   return (
     <Box className='bg'>
-      <Box className='box'>
-        <Box className='clock'>
-          <Box className='nut' />
-          <Box className='hour' sx={{transform: hrTransform}} />
-          <Box className='min' sx={{transform: mnTransform}} />
-          <Box className='sec' sx={{transform: scTransform}} />
-          <Box className='mark mark-1' />
-          <Box className='mark mark-2' />
-          <Box className='mark mark-3' />
-          <Box className='mark mark-4' />
-          <Box className='mark mark-5' />
-          <Box className='mark mark-6' />
-          <Box className='mark mark-7' />
-          <Box className='mark mark-8' />
-          <Box className='mark mark-9' />
-          <Box className='mark mark-10' />
-          <Box className='mark mark-11' />
-          <Box className='mark mark-12' />
+      <Box className='container'>
+        <Box className='box'>
+          <Box className='clock'>
+            <Box className='hour'>
+              <Box className='hr' sx={{transform: hrTransform}} />
+            </Box>
+            <Box className='min'>
+              <Box className='mn' sx={{transform: mnTransform}} />
+            </Box>
+            <Box className='sec'>
+              <Box className='sc' sx={{transform: scTransform}} />
+            </Box>
+          </Box>
         </Box>
       </Box>
     </Box>
   )
 }
 
-export default ClockThree
+export default ClockOne

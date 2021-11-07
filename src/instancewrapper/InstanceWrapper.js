@@ -50,13 +50,15 @@ async function fetchCodes(name, extraCodePaths) {
       fileName = `${line.substring(line.lastIndexOf('/') + 1)}`
       path = `${line}/index.js`
     }
+    let lastLevel = line.substring(0, line.lastIndexOf(`/${fileName}`))
+    lastLevel = lastLevel.substring(lastLevel.lastIndexOf('/') + 1)
+    fileName = lastLevel !== 'shared' ? `${lastLevel}/${fileName}` : fileName
     codes.push({
       name: fileName,
       path,
       code: ''
     })
   })
-
   return codes
 }
 
