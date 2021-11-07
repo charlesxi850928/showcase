@@ -3,9 +3,11 @@ import {Grid, Typography, Button} from '@mui/material'
 import FullScreenDialog from 'components/shared/FullScreenDialog'
 import APaper from 'components/shared/APaper'
 import './styles.moudle.scss'
+import useDeviceView from 'hooks/useDeviceView'
 
 const AnimationRadarIns = () => {
   const [openRadar, setOpenRadar] = useState(true)
+  const {isDesktopDownView} = useDeviceView()
   return (
     <APaper>
       <Button onClick={() => setOpenRadar(true)}>
@@ -18,10 +20,12 @@ const AnimationRadarIns = () => {
         paperPropsSX={{
           backgroundImage: 'url(assets/images/animation-radar/bg.jpg)',
           backgroundSize: 'cover',
-          '& .radar': {
-            width: '325px',
-            heigth: '325px'
-          }
+          '& .radar': isDesktopDownView
+            ? {
+                width: '325px',
+                height: '325px'
+              }
+            : {}
         }}
       >
         <Grid className='radar' component='ul' sx={{background: '#000000 url(assets/images/animation-radar/map.png)'}}>
