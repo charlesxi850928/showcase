@@ -18,6 +18,9 @@
 ::after {
   box-sizing: inherit;
 }
+.MuiAccordionSummary-content {
+  width: 90%;
+}
 
 .App-header {
   background-color: #282c34;

@@ -90,7 +90,12 @@ const InstanceWrapper = ({name, comp, extraCodePaths = []}) => {
     <Grid>
       <Grid>{comp}</Grid>
       <Grid>
-        <APaper sx={{paddingX: 0, paddingY: 0}}>
+        <APaper
+          sx={{
+            paddingX: 0,
+            paddingY: 0
+          }}
+        >
           {codes &&
             codes?.map((code, index) => (
               <Accordion
@@ -103,7 +108,9 @@ const InstanceWrapper = ({name, comp, extraCodePaths = []}) => {
                   aria-controls={`panel${index}a-content`}
                   id={`panel${index}a-header`}
                 >
-                  <Typography sx={{fontWeight: 600}}>{`${code.name}`}</Typography>
+                  <Typography
+                    sx={{fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}
+                  >{`${code.name}`}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <ACodeMirror code={code.code} />
