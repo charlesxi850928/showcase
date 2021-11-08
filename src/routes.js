@@ -16,6 +16,7 @@ const CardsInsWrapper = lazy(() => import('instancewrapper/CardsInsWrapper'))
 const AnimationRadarInsWrapper = lazy(() => import('instancewrapper/AnimationRadarInsWrapper'))
 const AnimationShootingStarsInsWrapper = lazy(() => import('instancewrapper/AnimationShootingStarsInsWrapper'))
 const ClockInsWrapper = lazy(() => import('instancewrapper/ClockInsWrapper'))
+const SignInSignUpInsWrapper = lazy(() => import('instancewrapper/SignInSignUpInsWrapper'))
 
 // eslint-disable-next-line import/no-cycle
 const ShowCase = lazy(() => import('./components/ShowCase'))
@@ -96,6 +97,11 @@ const routes = [
     name: 'Clock',
     path: '/clock',
     component: ClockInsWrapper
+  },
+  {
+    name: 'Sign In & Sign Up',
+    path: '/signInSignUp',
+    component: SignInSignUpInsWrapper
   }
 ]
 export default routes

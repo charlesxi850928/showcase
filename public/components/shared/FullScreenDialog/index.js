@@ -30,6 +30,7 @@ const FullScreenDialog = ({name, openDialog, setOpenDialog, children, paperProps
       }}
     >
       <Box
+        className='innerBox'
         sx={{
           display: 'flex',
           flexDirection: 'column',
