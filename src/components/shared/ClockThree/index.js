@@ -1,8 +1,8 @@
 import {Box} from '@mui/material'
 import {useEffect, useState} from 'react'
-import './styles.moudle.scss'
+import './styles.scss'
 
-const getCurrentTimeRatateZ = () => {
+const getCurrentTimeRotateZ = () => {
   const deg = 6
   const day = new Date()
   const hh = day.getHours() * 30
@@ -16,14 +16,14 @@ const getCurrentTimeRatateZ = () => {
 }
 
 const ClockThree = () => {
-  const initRotateZ = getCurrentTimeRatateZ()
+  const initRotateZ = getCurrentTimeRotateZ()
   const [hrTransform, setHRTransform] = useState(initRotateZ.hrRotateZ)
   const [mnTransform, setMNTransform] = useState(initRotateZ.mnRotateZ)
   const [scTransform, setSCTransform] = useState(initRotateZ.scRotateZ)
 
   useEffect(() => {
     const interval = setTimeout(() => {
-      const {hrRotateZ, mnRotateZ, scRotateZ} = getCurrentTimeRatateZ()
+      const {hrRotateZ, mnRotateZ, scRotateZ} = getCurrentTimeRotateZ()
 
       setHRTransform(hrRotateZ)
       setMNTransform(mnRotateZ)

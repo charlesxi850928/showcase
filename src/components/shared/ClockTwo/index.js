@@ -1,6 +1,6 @@
 import {Box} from '@mui/material'
 import {useEffect, useState} from 'react'
-import './styles.moudle.scss'
+import './styles.scss'
 
 const getCurrentTime = () => {
   const day = new Date()

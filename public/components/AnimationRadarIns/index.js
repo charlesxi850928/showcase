@@ -2,7 +2,7 @@ import {useState} from 'react'
 import {Grid, Typography, Button} from '@mui/material'
 import FullScreenDialog from 'components/shared/FullScreenDialog'
 import APaper from 'components/shared/APaper'
-import './styles.moudle.scss'
+import './styles.scss'
 import useDeviceView from 'hooks/useDeviceView'
 
 const AnimationRadarIns = () => {
@@ -11,7 +11,7 @@ const AnimationRadarIns = () => {
   return (
     <APaper>
       <Button onClick={() => setOpenRadar(true)}>
-        <Typography>Open Radar</Typography>:
+        <Typography>Open Radar</Typography>
       </Button>
       <FullScreenDialog
         name='radar'

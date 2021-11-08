@@ -2,7 +2,7 @@ import {useState} from 'react'
 import {Grid, Typography, Button} from '@mui/material'
 import FullScreenDialog from 'components/shared/FullScreenDialog'
 import APaper from 'components/shared/APaper'
-import './styles.moudle.scss'
+import './styles.scss'
 
 const AnimationRadarIns = () => {
   const [openShootingStars, setOpenShootingStars] = useState(true)

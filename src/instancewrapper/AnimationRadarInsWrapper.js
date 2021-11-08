@@ -5,6 +5,6 @@ export default () => (
   <InstanceWrapper
     name='AnimationRadarIns'
     comp={<AnimationRadarIns />}
-    extraCodePaths={['components/AnimationRadarIns/styles.moudle.scss']}
+    extraCodePaths={['components/AnimationRadarIns/styles.scss']}
   />
 )

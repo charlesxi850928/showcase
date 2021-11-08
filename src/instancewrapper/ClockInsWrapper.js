@@ -6,9 +6,9 @@ export default () => (
     name='ClockIns'
     comp={<ClockIns />}
     extraCodePaths={[
-      'components/shared/ClockOne/styles.moudle.scss',
-      'components/shared/ClockTwo/styles.moudle.scss',
-      'components/shared/ClockThree/styles.moudle.scss'
+      'components/shared/ClockOne/styles.scss',
+      'components/shared/ClockTwo/styles.scss',
+      'components/shared/ClockThree/styles.scss'
     ]}
   />
 )
