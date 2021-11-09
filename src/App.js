@@ -6,6 +6,7 @@ import Home from './components/Home'
 import routes from './routes'
 import Header from './Header'
 import ABackdrop from './components/shared/ABackdrop'
+import Footer from './Footer'
 
 const App = () => (
   <Box>
@@ -18,6 +19,7 @@ const App = () => (
         ))}
       </Suspense>
     </Grid>
+    <Footer />
   </Box>
 )
 
