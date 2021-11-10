@@ -14,7 +14,16 @@ const Header = () => {
     history.goForward()
   }
   return (
-    <Paper>
+    <Paper
+      sx={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 1,
+        borderRadius: 0,
+        boxShadow:
+          '10px 10px 20px rgb(255 255 255 / 30%), 10px 10px 20px rgb(0 0 0 / 30%), 10px 20px 100px rgb(0 0 0 / 30%)'
+      }}
+    >
       <Grid display='flex' alignItems='center' role='region' aria-label='header info'>
         <Typography sx={visuallyHidden} id='sr-only-page-title' variant='h1' component='h1' aria-live='polite'>
           Show Case
