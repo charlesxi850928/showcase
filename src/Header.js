@@ -18,7 +18,7 @@ const Header = () => {
       sx={{
         position: 'sticky',
         top: 0,
-        zIndex: 1,
+        zIndex: 999,
         borderRadius: 0,
         boxShadow:
           '10px 10px 20px rgb(255 255 255 / 30%), 10px 10px 20px rgb(0 0 0 / 30%), 10px 20px 100px rgb(0 0 0 / 30%)'
