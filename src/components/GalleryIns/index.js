@@ -10,85 +10,85 @@ const GalleryIns = () => {
   const {isDesktopView, isDesktopDownView} = useDeviceView()
   const imageList = [
     {
-      url: 'assets/images/gallery-tmp/1.jpg',
-      alt: 'Burling Game State Park 1',
+      url: 'assets/images/gallery-tmp/1440x900_5.jpg',
+      alt: 'Nature State Park 1',
       displayOrder: 1
     },
     {
-      url: 'assets/images/gallery-tmp/2.jpg',
-      alt: 'Burling Game State Park 2',
+      url: 'assets/images/gallery-tmp/1440x900_6.jpg',
+      alt: 'Nature State Park 2',
       displayOrder: 2
     },
     {
-      url: 'assets/images/gallery-tmp/3.jpg',
-      alt: 'Burling Game State Park 3',
+      url: 'assets/images/gallery-tmp/1440x900_7.jpg',
+      alt: 'Nature State Park 3',
       displayOrder: 3
     },
     {
-      url: 'assets/images/gallery-tmp/4.jpg',
-      alt: 'Burling Game State Park 4',
+      url: 'assets/images/gallery-tmp/1440x900_8.jpg',
+      alt: 'Nature State Park 4',
       displayOrder: 4
     },
     {
-      url: 'assets/images/gallery-tmp/5.jpg',
-      alt: 'Burling Game State Park 5',
+      url: 'assets/images/gallery-tmp/1440x900_9.jpg',
+      alt: 'Nature State Park 5',
       displayOrder: 5
     },
     {
-      url: 'assets/images/gallery-tmp/6.jpg',
-      alt: 'Burling Game State Park 6',
+      url: 'assets/images/gallery-tmp/1440x900_10.jpg',
+      alt: 'Nature State Park 6',
       displayOrder: 6
     },
     {
-      url: 'assets/images/gallery-tmp/7.jpg',
-      alt: 'Burling Game State Park 7',
+      url: 'assets/images/gallery-tmp/1440x900_11.jpg',
+      alt: 'Nature State Park 7',
       displayOrder: 7
     },
     {
-      url: 'assets/images/gallery-tmp/8.jpg',
-      alt: 'Burling Game State Park 8',
+      url: 'assets/images/gallery-tmp/1440x900_12.jpg',
+      alt: 'Nature State Park 8',
       displayOrder: 8
     }
   ]
   const thumbnailList = [
     {
-      url: 'assets/images/card-thumbnail-tmp/1/180x120.jpg',
-      alt: 'Burling Game State Park 1',
+      url: 'assets/images/card-thumbnail-tmp/180x120_5.jpg',
+      alt: 'Nature State Park 1',
       displayOrder: 1
     },
     {
-      url: 'assets/images/card-thumbnail-tmp/2/180x120.jpg',
-      alt: 'Burling Game State Park 2',
+      url: 'assets/images/card-thumbnail-tmp/180x120_6.jpg',
+      alt: 'Nature State Park 2',
       displayOrder: 2
     },
     {
-      url: 'assets/images/card-thumbnail-tmp/3/180x120.jpg',
-      alt: 'Burling Game State Park 3',
+      url: 'assets/images/card-thumbnail-tmp/180x120_7.jpg',
+      alt: 'Nature State Park 3',
       displayOrder: 3
     },
     {
-      url: 'assets/images/card-thumbnail-tmp/4/180x120.jpg',
-      alt: 'Burling Game State Park 4',
+      url: 'assets/images/card-thumbnail-tmp/180x120_8.jpg',
+      alt: 'Nature State Park 4',
       displayOrder: 4
     },
     {
-      url: 'assets/images/card-thumbnail-tmp/5/180x120.jpg',
-      alt: 'Burling Game State Park 5',
+      url: 'assets/images/card-thumbnail-tmp/180x120_9.jpg',
+      alt: 'Nature State Park 5',
       displayOrder: 5
     },
     {
-      url: 'assets/images/card-thumbnail-tmp/6/180x120.jpg',
-      alt: 'Burling Game State Park 6',
+      url: 'assets/images/card-thumbnail-tmp/180x120_10.jpg',
+      alt: 'Nature State Park 6',
       displayOrder: 6
     },
     {
-      url: 'assets/images/card-thumbnail-tmp/7/180x120.jpg',
-      alt: 'Burling Game State Park 7',
+      url: 'assets/images/card-thumbnail-tmp/180x120_11.jpg',
+      alt: 'Nature State Park 7',
       displayOrder: 7
     },
     {
-      url: 'assets/images/card-thumbnail-tmp/8/180x120.jpg',
-      alt: 'Burling Game State Park 8',
+      url: 'assets/images/card-thumbnail-tmp/180x120_12.jpg',
+      alt: 'Nature State Park 8',
       displayOrder: 8
     }
   ]

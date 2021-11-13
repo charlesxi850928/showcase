@@ -35,7 +35,6 @@ const FullScreenDialog = ({name, openDialog, setOpenDialog, children, paperProps
           display: 'flex',
           flexDirection: 'column',
           maxWidth: {xs: 'unset', md: '98vh'},
-          minHeight: {xs: '100%', md: 'unset'},
           [childrenClassName]: {
             display: 'flex',
             flexGrow: 1,
