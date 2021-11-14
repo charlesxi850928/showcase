@@ -48,13 +48,7 @@ const Rating = () => {
   const [ratingStatus, setRatingStatus] = useState({transform: 'translateX(0px)'})
   const [score, setScore] = useState(0)
   return (
-    <Grid
-      display='flex'
-      direction='column'
-      justifyContent='center'
-      alignItems='center'
-      sx={{padding: '5rem', backgroundImage: 'linear-gradient(to right, #ff4b4b, #d12280)'}}
-    >
+    <Grid display='flex' direction='column' justifyContent='center' alignItems='center'>
       <Grid
         display='flex'
         direction='column'

@@ -18,6 +18,8 @@ const AnimationShootingStarsInsWrapper = lazy(() => import('instancewrapper/Anim
 const ClockInsWrapper = lazy(() => import('instancewrapper/ClockInsWrapper'))
 const SignInSignUpInsWrapper = lazy(() => import('instancewrapper/SignInSignUpInsWrapper'))
 const RatingInsWrapper = lazy(() => import('instancewrapper/RatingInsWrapper'))
+const NavigationBarInsWrapper = lazy(() => import('instancewrapper/NavigationBarInsWrapper'))
+const CalculatorInsWrapper = lazy(() => import('instancewrapper/CalculatorInsWrapper'))
 
 // eslint-disable-next-line import/no-cycle
 const ShowCase = lazy(() => import('./components/ShowCase'))
@@ -108,6 +110,16 @@ const routes = [
     name: 'Rating',
     path: '/rating',
     component: RatingInsWrapper
+  },
+  {
+    name: 'Navigation Bar',
+    path: '/navigationBar',
+    component: NavigationBarInsWrapper
+  },
+  {
+    name: 'Calculator',
+    path: '/calculator',
+    component: CalculatorInsWrapper
   }
 ]
 export default routes
