@@ -14,9 +14,7 @@ const App = () => (
     <Grid role='main' aria-label='main info'>
       <Suspense fallback={<ABackdrop />}>
         <Route exact path='/' component={Home} />
-        {routes.map((r) => (
-          <Route key={r.name} path={r.path} component={r.component} />
-        ))}
+        {routes.map((r) => r.component && <Route key={r.name} path={r.path} component={r.component} />)}
       </Suspense>
     </Grid>
     <Footer />
