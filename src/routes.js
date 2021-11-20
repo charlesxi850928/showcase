@@ -123,7 +123,7 @@ const routes = [
   },
   {
     name: 'Visualized',
-    path: '/components/VisualizedIns'
+    path: '/VisualizedIns'
   }
 ]
 export default routes
