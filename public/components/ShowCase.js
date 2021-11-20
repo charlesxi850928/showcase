@@ -8,34 +8,69 @@ import APaper from './shared/APaper'
 // eslint-disable-next-line import/no-cycle
 import routes from '../routes'
 
+const normalLinksCount = routes.filter((route) => route.component).length
+
 const ShowCase = () => (
   <APaper>
-    <List>
-      {routes.map((route, index) =>
-        route.name === SHOW_CASE ? (
-          <Box key={route.name} />
-        ) : (
-          <ListItem key={route.name}>
-            <Avatar
-              sx={{
-                bgcolor: deepOrange[900],
-                width: 32,
-                height: 32,
-                marginRight: 1
-              }}
-            >
-              <Typography>{index < 10 ? `0${index}` : index}</Typography>
-            </Avatar>
-            {route.componenet ? (
-              <NavLink to={route.path}>
-                <Typography>{route.name}</Typography>
-              </NavLink>
-            ) : (
-              <a href={route.path}>{route.name}</a>
-            )}
-          </ListItem>
-        )
-      )}
+    <List sx={{paddingY: 0}}>
+      {routes
+        .filter((route) => route.component)
+        .map((route, index) =>
+          route.name === SHOW_CASE ? (
+            <Box key={route.name} />
+          ) : (
+            <ListItem key={route.name}>
+              <Avatar
+                sx={{
+                  bgcolor: deepOrange[900],
+                  width: 32,
+                  height: 32,
+                  marginRight: 1
+                }}
+              >
+                <Typography>{index < 10 ? `0${index}` : index}</Typography>
+              </Avatar>
+              {route.componenet ? (
+                <NavLink to={route.path}>
+                  <Typography>{route.name}</Typography>
+                </NavLink>
+              ) : (
+                <a href={route.path}>{route.name}</a>
+              )}
+            </ListItem>
+          )
+        )}
+    </List>
+    <List sx={{paddingTop: 0}}>
+      {routes
+        .filter((route) => !route.component)
+        .map((route, index) =>
+          route.name === SHOW_CASE ? (
+            <Box key={route.name} />
+          ) : (
+            <ListItem key={route.name}>
+              <Avatar
+                sx={{
+                  bgcolor: deepOrange[900],
+                  width: 32,
+                  height: 32,
+                  marginRight: 1
+                }}
+              >
+                <Typography>{normalLinksCount + index}</Typography>
+              </Avatar>
+              {route.componenet ? (
+                <NavLink to={route.path}>
+                  <Typography>{route.name}</Typography>
+                </NavLink>
+              ) : (
+                <a href={route.path} target='_blank' rel='noreferrer'>
+                  {route.name}
+                </a>
+              )}
+            </ListItem>
+          )
+        )}
     </List>
   </APaper>
 )
