@@ -102,7 +102,7 @@ const Calculator = () => {
           borderRadius: '0.5rem',
           padding: '1rem',
           background: 'silver',
-          margin: '0.5rem',
+          margin: {xs: '0.5rem 0.5rem', md: '0.5rem 0'},
           minHeight: '5rem',
           overflow: 'hidden',
           wordBreak: 'break-all'
