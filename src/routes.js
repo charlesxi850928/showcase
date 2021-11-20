@@ -120,6 +120,10 @@ const routes = [
     name: 'Calculator',
     path: '/calculator',
     component: CalculatorInsWrapper
+  },
+  {
+    name: 'Visualized',
+    path: '/components/VisualizedIns'
   }
 ]
 export default routes

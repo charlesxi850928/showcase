@@ -1,44 +1,94 @@
 import {Grid, Box, Button, Typography} from '@mui/material'
 import {useState} from 'react'
 
+const calc = (displayValue, val, result) => {
+  let newDisplayValue = displayValue
+  let newResult = result
+  if (newDisplayValue === '0' && val === '.') {
+    newDisplayValue = '0.'
+  } else {
+    if (newDisplayValue === '0') {
+      newDisplayValue = ''
+    }
+    // eslint-disable-next-line no-restricted-globals
+    if (!isNaN(val) || val === '.') {
+      if (newDisplayValue.indexOf('.') > -1) {
+        if (val !== '.') {
+          newDisplayValue = (newDisplayValue + val).toString()
+        }
+      } else {
+        newDisplayValue = (newDisplayValue + val).toString()
+      }
+    } else if (val !== '=') {
+      newResult[newResult.length] = newDisplayValue
+      newResult[newResult.length] = val
+      newDisplayValue = (newDisplayValue + val).toString()
+    } else {
+      newResult[newResult.length] = newDisplayValue
+      try {
+        // eslint-disable-next-line no-eval
+        newDisplayValue = eval(newResult[2])
+          .toFixed(12)
+          .toString()
+          // Remove 0 after .
+          .replace(/(?:\.0*|(\.\d+?)0+)$/, '$1')
+      } catch (e) {
+        newDisplayValue = displayValue
+      }
+      newResult = []
+    }
+  }
+  return {
+    result: newResult,
+    displayValue: newDisplayValue
+  }
+}
+
 const Calculator = () => {
   const [result, setResult] = useState([])
   const [displayValue, setDisplayValue] = useState('')
   const handleACDELKeyClick = (val) => {
     if (val === 'AC') {
       setResult([])
-      setDisplayValue(0)
+      setDisplayValue('0')
     } else {
-      setDisplayValue(displayValue.substr(0, displayValue.length - 1))
+      setDisplayValue(displayValue.substring(0, displayValue.length - 1))
     }
   }
   const handleNormalKeyClick = (val) => {
-    if (displayValue === 0 && val === '.') {
-      setDisplayValue('0.')
-    } else {
-      if (displayValue === 0) {
-        setDisplayValue('')
-      }
-      // eslint-disable-next-line no-restricted-globals
-      if (!isNaN(val) || val === '.') {
-        if (displayValue.indexOf('.') > -1) {
-          if (val !== '.') {
-            setDisplayValue((displayValue + val).toString())
-          }
-        } else {
-          setDisplayValue((displayValue + val).toString())
-        }
-      } else if (val !== '=') {
-        result[result.length] = displayValue
-        result[result.length] = val
-        setDisplayValue((displayValue + val).toString())
-      } else {
-        result[result.length] = displayValue
-        // eslint-disable-next-line no-eval
-        setDisplayValue(eval(result[2]).toString())
-        setResult([])
-      }
+    if (displayValue.length > 30) {
+      return
     }
+    const displayValueLastChar = displayValue.substring(displayValue.length - 1)
+    if (
+      (val === '%' || val === '+' || val === '-' || val === '*' || val === '/') &&
+      result &&
+      (displayValueLastChar === '%' ||
+        displayValueLastChar === '+' ||
+        displayValueLastChar === '-' ||
+        displayValueLastChar === '*' ||
+        displayValueLastChar === '/')
+    ) {
+      return
+    }
+    let newResult = result
+    let newDisplayValue = displayValue
+    if (
+      displayValue !== '0' &&
+      (val === '%' || val === '+' || val === '-' || val === '*' || val === '/') &&
+      (displayValue.lastIndexOf('%') > -1 ||
+        displayValue.lastIndexOf('+') > -1 ||
+        displayValue.lastIndexOf('-') > -1 ||
+        displayValue.lastIndexOf('*') > -1 ||
+        displayValue.lastIndexOf('/') > -1)
+    ) {
+      const calcResult = calc(displayValue, '=', result)
+      newResult = calcResult.result
+      newDisplayValue = calcResult.displayValue
+    }
+    const calcResult = calc(newDisplayValue, val, newResult)
+    setResult(calcResult.result)
+    setDisplayValue(calcResult.displayValue)
   }
   return (
     <Grid className='calculator'>
@@ -47,14 +97,15 @@ const Calculator = () => {
           display: 'flex',
           justifyContent: 'flex-end',
           alignItems: 'center',
-          fontSize: '3rem',
+          fontSize: '2rem',
           fontWeight: 600,
           borderRadius: '0.5rem',
           padding: '1rem',
           background: 'silver',
           margin: '0.5rem',
           minHeight: '5rem',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          wordBreak: 'break-all'
         }}
       >
         <Box>{displayValue}</Box>
