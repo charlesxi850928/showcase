@@ -1,5 +1,5 @@
 import React from 'react'
-import {List, ListItem, Box, Typography} from '@mui/material'
+import {List, ListItem, Box, Typography, Link} from '@mui/material'
 import {NavLink} from 'react-router-dom'
 import {deepOrange} from '@mui/material/colors'
 import Avatar from '@mui/material/Avatar'
@@ -30,13 +30,9 @@ const ShowCase = () => (
               >
                 <Typography>{index < 10 ? `0${index}` : index}</Typography>
               </Avatar>
-              {route.componenet ? (
-                <NavLink to={route.path}>
-                  <Typography>{route.name}</Typography>
-                </NavLink>
-              ) : (
-                <a href={route.path}>{route.name}</a>
-              )}
+              <NavLink to={route.path}>
+                <Typography>{route.name}</Typography>
+              </NavLink>
             </ListItem>
           )
         )}
@@ -59,15 +55,9 @@ const ShowCase = () => (
               >
                 <Typography>{normalLinksCount + index}</Typography>
               </Avatar>
-              {route.componenet ? (
-                <NavLink to={route.path}>
-                  <Typography>{route.name}</Typography>
-                </NavLink>
-              ) : (
-                <a href={route.path} target='_blank' rel='noreferrer'>
-                  {route.name}
-                </a>
-              )}
+              <Link href={route.path} target='_blank' rel='noreferrer'>
+                {route.name}
+              </Link>
             </ListItem>
           )
         )}
