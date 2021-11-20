@@ -1,5 +1,5 @@
 import React from 'react'
-import {List, ListItem, Box, Typography} from '@mui/material'
+import {List, ListItem, Box, Typography, Link} from '@mui/material'
 import {NavLink} from 'react-router-dom'
 import {deepOrange} from '@mui/material/colors'
 import Avatar from '@mui/material/Avatar'
@@ -31,7 +31,7 @@ const ShowCase = () => (
                 <Typography>{route.name}</Typography>
               </NavLink>
             ) : (
-              <a href={route.path}>{route.name}</a>
+              <Link href={route.path}>{route.name}</Link>
             )}
           </ListItem>
         )
