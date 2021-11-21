@@ -20,6 +20,7 @@ const SignInSignUpInsWrapper = lazy(() => import('instancewrapper/SignInSignUpIn
 const RatingInsWrapper = lazy(() => import('instancewrapper/RatingInsWrapper'))
 const NavigationBarInsWrapper = lazy(() => import('instancewrapper/NavigationBarInsWrapper'))
 const CalculatorInsWrapper = lazy(() => import('instancewrapper/CalculatorInsWrapper'))
+const AMapInsWrapper = lazy(() => import('instancewrapper/AMapInsWrapper'))
 
 // eslint-disable-next-line import/no-cycle
 const ShowCase = lazy(() => import('./components/ShowCase'))
@@ -124,6 +125,11 @@ const routes = [
   {
     name: 'Visualized',
     path: '/components/VisualizedIns'
+  },
+  {
+    name: 'AMap',
+    path: '/amap',
+    component: AMapInsWrapper
   }
 ]
 export default routes
