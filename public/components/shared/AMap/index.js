@@ -13,39 +13,39 @@ const AMap = ({width = '100%', height = '80vh', markers}) => {
     {
       name: 'ToolBar',
       options: {
-        visible: true,
-        onCreated(ins) {
-          console.log(ins)
-        }
+        visible: true
+        // onCreated(ins) {
+        //   console.log(ins)
+        // }
       }
     }
   ]
   const markersEvents = {
     click: (MapsOption, marker) => {
-      console.log('MapsOptions:')
-      console.log(MapsOption)
-      console.log('marker:')
-      console.log(marker)
+      // console.log('MapsOptions:')
+      // console.log(MapsOption)
+      // console.log('marker:')
+      // console.log(marker)
       setShowMarkerPopper(true)
-      console.log(marker.w.extData.position)
+      // console.log(marker.w.extData.position)
       setMarkerPopperPosition(marker.w.extData.position)
     }
   }
 
   const markerPopperEvents = {
-    created: (iw) => {
-      console.log(iw)
-    },
-    open: () => {
-      console.log('InfoWindow opened')
-    },
-    close: () => {
-      console.log('InfoWindow closed')
-      setShowMarkerPopper(false)
-    },
-    change: () => {
-      console.log('InfoWindow prop changed')
-    }
+    // created: (iw) => {
+    //   console.log(iw)
+    // },
+    // open: () => {
+    //   console.log('InfoWindow opened')
+    // },
+    // close: () => {
+    //   console.log('InfoWindow closed')
+    //   setShowMarkerPopper(false)
+    // },
+    // change: () => {
+    //   console.log('InfoWindow prop changed')
+    // }
   }
 
   const html = `<div><h4>Greetings</h4><p>This is content of this info window</p><p>Click 'Change Value' Button: ${showMarkerPopper}</p></div>`
