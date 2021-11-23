@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import {useState} from 'react'
 import {Map, Markers, InfoWindow} from 'react-amap'
 
-const AMap = ({width = '100%', height = '80vh', markers}) => {
+const AMap = ({width = '100%', height = '80vh', markers, buildMarkerPopContent}) => {
   const [showMarkerPopper, setShowMarkerPopper] = useState(false)
   const [markerPopperPosition, setMarkerPopperPosition] = useState(null)
+  const [markerPopperContent, setMarkerPopperContent] = useState(null)
   const plugins = [
     // 'MapType',
     'Scale',
@@ -21,14 +22,25 @@ const AMap = ({width = '100%', height = '80vh', markers}) => {
     }
   ]
   const markersEvents = {
-    click: (MapsOption, marker) => {
+    click: (mapsOption, marker) => {
       // console.log('MapsOptions:')
-      // console.log(MapsOption)
+      // console.log(mapsOption)
       // console.log('marker:')
       // console.log(marker)
-      setShowMarkerPopper(true)
+      new Promise((resolve, reject) => {
+        let content = ''
+        try {
+          content = buildMarkerPopContent(mapsOption, marker)
+          resolve(content)
+          setMarkerPopperContent(content)
+        } catch (e) {
+          reject(e)
+        }
+      }).then(() => {
+        setShowMarkerPopper(true)
+        setMarkerPopperPosition(marker.w.extData.position)
+      })
       // console.log(marker.w.extData.position)
-      setMarkerPopperPosition(marker.w.extData.position)
     }
   }
 
@@ -39,16 +51,15 @@ const AMap = ({width = '100%', height = '80vh', markers}) => {
     // open: () => {
     //   console.log('InfoWindow opened')
     // },
-    // close: () => {
-    //   console.log('InfoWindow closed')
-    //   setShowMarkerPopper(false)
-    // },
+    close: () => {
+      // console.log('InfoWindow closed')
+      setShowMarkerPopper(false)
+    }
     // change: () => {
     //   console.log('InfoWindow prop changed')
     // }
   }
 
-  const html = `<div><h4>Greetings</h4><p>This is content of this info window</p><p>Click 'Change Value' Button: ${showMarkerPopper}</p></div>`
   return (
     <Box sx={{width, height}}>
       <Map
@@ -73,9 +84,9 @@ const AMap = ({width = '100%', height = '80vh', markers}) => {
           position={{...markerPopperPosition}}
           visible={showMarkerPopper}
           isCustom={false}
-          content={html}
+          content={markerPopperContent}
           autoMove
-          closeWhenClickMap
+          closeWhenClickMap={false}
           showShadow={false}
           events={markerPopperEvents}
         />
@@ -87,7 +98,8 @@ const AMap = ({width = '100%', height = '80vh', markers}) => {
 AMap.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
-  markers: PropTypes.array
+  markers: PropTypes.array,
+  buildMarkerPopContent: PropTypes.func
 }
 
 export default AMap
