@@ -1,0 +1,118 @@
+/*Radar Outer Circles*/
+.cardHover {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+
+  .card {
+    position: relative;
+    width: 800px;
+    height: 350px;
+    // background: #ccc;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    .circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #d83133;
+        clip-path: circle(120px at center);
+        transition: 0.5s;
+      }
+    }
+
+    &:hover .circle::before {
+      background: #0065c3;
+      clip-path: circle(400px at center);
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 300px;
+      transition: 0.5s;
+      pointer-events: none;
+    }
+    &:hover img {
+      left: 72%;
+      height: 420px;
+    }
+
+    .content {
+      position: relative;
+      width: 50%;
+      left: 20%;
+      padding: 20px 20px 20px 40px;
+      transition: 0.5s;
+      opacity: 0;
+      visibility: hidden;
+
+      h2 {
+        color: white;
+        text-transform: uppercase;
+        font-size: 2rem;
+        line-height: 1rem;
+      }
+      p {
+        margin-top: 0.5rem;
+        color: white;
+      }
+      a {
+        position: relative;
+        background: #fff;
+        color: black;
+        padding: 5px 10px;
+        display: inline-block;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+    }
+    &:hover .content {
+      left: 0;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .card {
+      width: auto;
+      max-width: 350px;
+      align-items: flex-start;
+      &:hover {
+        height: 700px;
+        img {
+          top: 72%;
+          left: 50%;
+          height: 300px;
+        }
+      }
+      .content {
+        width: 100%;
+        left: 0;
+        padding: 40px 20px;
+      }
+    }
+  }
+}
