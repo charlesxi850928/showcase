@@ -133,8 +133,8 @@ const routes = [
     component: AMapInsWrapper
   },
   {
-    name: 'CardHover',
-    path: '/CardHover',
+    name: 'Card Hover',
+    path: '/cardHover',
     component: CardHoverInsWrapper
   }
 ]
