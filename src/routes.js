@@ -23,6 +23,7 @@ const CalculatorInsWrapper = lazy(() => import('instancewrapper/CalculatorInsWra
 const AMapInsWrapper = lazy(() => import('instancewrapper/AMapInsWrapper'))
 const CardHoverInsWrapper = lazy(() => import('instancewrapper/CardHoverInsWrapper'))
 const MagicMenuInsWrapper = lazy(() => import('instancewrapper/MagicMenuInsWrapper'))
+const AnimationTeaCupInsWrapper = lazy(() => import('instancewrapper/AnimationTeaCupInsWrapper'))
 
 // eslint-disable-next-line import/no-cycle
 const ShowCase = lazy(() => import('./components/ShowCase'))
@@ -142,6 +143,11 @@ const routes = [
     name: 'Magic Menu',
     path: '/magicMenu',
     component: MagicMenuInsWrapper
+  },
+  {
+    name: 'Animation Tea Cup',
+    path: '/animationTeaCup',
+    component: AnimationTeaCupInsWrapper
   }
 ]
 export default routes
