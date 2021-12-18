@@ -1,5 +1,5 @@
 import APaper from 'components/shared/APaper'
-import MagicMenu from 'components/shared/MagicMenu'
+import CircularMenu from 'components/shared/CircularMenu'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined'
 import MapsUgcOutlinedIcon from '@mui/icons-material/MapsUgcOutlined'
@@ -11,7 +11,7 @@ import DateRangeOutlinedIcon from '@mui/icons-material/DateRangeOutlined'
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined'
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
 
-const MagicMenuIns = () => {
+const CircularMenuIns = () => {
   const menus = [
     {icon: <HomeOutlinedIcon />, text: 'Home'},
     {icon: <PersonOutlinedIcon />, text: 'Profile'},
@@ -25,9 +25,9 @@ const MagicMenuIns = () => {
     {icon: <MoreHorizOutlinedIcon />, text: 'More'}
   ]
   return (
-    <APaper sx={{background: 'black', paddingX: '0.5rem'}}>
-      <MagicMenu menus={menus} />
+    <APaper sx={{background: 'linear-gradient(45deg, #8460ed,#ff1252)', paddingX: '0.5rem'}}>
+      <CircularMenu menus={menus} />
     </APaper>
   )
 }
-export default MagicMenuIns
+export default CircularMenuIns

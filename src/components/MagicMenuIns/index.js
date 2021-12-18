@@ -20,7 +20,7 @@ const MagicMenuIns = () => {
     {icon: <VolunteerActivismOutlinedIcon />, text: 'Activism'},
     {icon: <GroupsOutlinedIcon />, text: 'Teams'},
     {icon: <DateRangeOutlinedIcon />, text: 'Calendar'},
-    {icon: <LocalPhoneOutlinedIcon />, text: 'Photos'},
+    {icon: <LocalPhoneOutlinedIcon />, text: 'Phone'},
     {icon: <SettingsOutlinedIcon />, text: 'Settings'},
     {icon: <MoreHorizOutlinedIcon />, text: 'More'}
   ]

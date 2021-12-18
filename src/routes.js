@@ -25,6 +25,7 @@ const CardHoverInsWrapper = lazy(() => import('instancewrapper/CardHoverInsWrapp
 const MagicMenuInsWrapper = lazy(() => import('instancewrapper/MagicMenuInsWrapper'))
 const AnimationTeaCupInsWrapper = lazy(() => import('instancewrapper/AnimationTeaCupInsWrapper'))
 const LoaderInsWrapper = lazy(() => import('instancewrapper/LoaderInsWrapper'))
+const CircularMenuInsWrapper = lazy(() => import('instancewrapper/CircularMenuInsWrapper'))
 
 // eslint-disable-next-line import/no-cycle
 const ShowCase = lazy(() => import('./components/ShowCase'))
@@ -154,6 +155,11 @@ const routes = [
     name: 'Loader',
     path: '/loader',
     component: LoaderInsWrapper
+  },
+  {
+    name: 'Circular Menu',
+    path: '/circularMenu',
+    component: CircularMenuInsWrapper
   }
 ]
 export default routes
