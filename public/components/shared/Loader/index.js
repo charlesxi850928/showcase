@@ -3,11 +3,14 @@ import {Box, Typography} from '@mui/material'
 const Loader = () => {
   console.log('....')
   return (
-    <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-      <Box
-        className='loader'
-        sx={{
-          position: 'relative',
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative',
+        '& .loader': {
           display: 'flex',
           animation: 'changeColor 5s linear infinite',
           '@keyframes changeColor': {
@@ -38,13 +41,27 @@ const Loader = () => {
             '10%': {
               transform: 'scale(1)'
             }
+          },
+          '&.second .dot': {
+            animationDelay: 'calc(-0.1s * var(--i))'
           }
-        }}
-      >
+        },
+        '& h1': {
+          color: '#ffffff',
+          fontFamily: 'cursive'
+        }
+      }}
+    >
+      <Box className='loader first'>
         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((idx) => (
           <Box className='dot' style={{'--i': idx}} />
         ))}
-        <Typography component='h1'>Loading...</Typography>
+      </Box>
+      <Typography component='h1'>Loading...</Typography>
+      <Box className='loader second'>
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((idx) => (
+          <Box className='dot' style={{'--i': idx}} />
+        ))}
       </Box>
     </Box>
   )
