@@ -52,13 +52,13 @@ const Loader = () => (
   >
     <Box className='loader first'>
       {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((idx) => (
-        <Box className='dot' style={{'--i': idx}} />
+        <Box className='dot' key={idx} style={{'--i': idx}} />
       ))}
     </Box>
     <Typography component='h1'>Loading...</Typography>
     <Box className='loader second'>
       {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((idx) => (
-        <Box className='dot' style={{'--i': idx}} />
+        <Box className='dot' key={idx} style={{'--i': idx}} />
       ))}
     </Box>
   </Box>

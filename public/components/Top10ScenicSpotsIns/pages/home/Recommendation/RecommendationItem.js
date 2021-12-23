@@ -1,7 +1,7 @@
 import {Card, CardMedia, CardActionArea, CardContent} from '@mui/material'
 import {useRouter} from 'next/router'
 import PropTypes from 'prop-types'
-import {RoutePath} from 'routes'
+import {RoutePath} from 'ShowCase/routes'
 import ATypography from 'mui/ATypography'
 import {getPublicPath} from 'utils/GeneralUtils'
 import {clearCampsiteFilterCondition} from '../../shared/ClearCampsiteFilterCondition/ClearCampsiteFilterCondition'

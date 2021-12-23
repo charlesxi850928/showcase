@@ -5,7 +5,7 @@ import {loadShoppingCartTimer, getCartData} from 'services/cartServices'
 import {TIMER_STATUS_NO_TIMER, TIMER_STATUS_OK, TIMER_STATUS_ALMOST_TIMEOUT} from 'services/Constants'
 import {isEmptyObj} from 'utils/GeneralUtils'
 import {useRouter} from 'next/router'
-import {RoutePath} from 'routes'
+import {RoutePath} from 'ShowCase/routes'
 import TimerDisplay from './TimerDisplay'
 
 const renderer = ({minutes, seconds}) => <TimerDisplay minSec={minutes * 60 + seconds} />

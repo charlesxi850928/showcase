@@ -1,9 +1,9 @@
 import {deepPurple, blue} from '@mui/material/colors'
 import {visuallyHidden} from '@mui/utils'
-import './App.css'
+import '../App.css'
 import {useHistory} from 'react-router-dom'
 import {Avatar, Grid, Paper, Typography} from '@mui/material'
-import logo from './logo.svg'
+import logo from '../logo.svg'
 
 const Header = () => {
   const history = useHistory()

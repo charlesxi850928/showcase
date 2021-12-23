@@ -1,1 +1,6 @@
-export const SHOW_CASE = "Show Case"
+export const SHOW_CASE = 'Show Case'
+export const SHOW_CASE_PATH = '/showCase'
+export const VISUALIZED = 'Visualized'
+export const VISUALIZED_PATH = '/components/VisualizedIns/index.html'
+export const TOP_10_SCENICSPOTS = 'Top10 Scenic Spots'
+export const TOP_10_SCENICSPOTS_PATH = '/top10ScenicSpots'

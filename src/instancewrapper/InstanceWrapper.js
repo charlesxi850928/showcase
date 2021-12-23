@@ -6,6 +6,10 @@ import lodash from 'lodash'
 import ACodeMirror from 'components/shared/ACodeMirror'
 import APaper from 'components/shared/APaper'
 
+import Header from '../ShowCase/Header'
+import Footer from '../Footer'
+import App from '../App'
+
 async function getCode(path) {
   let newPath = path
   if (newPath.indexOf('.scss') > -1) {
@@ -87,8 +91,10 @@ const InstanceWrapper = ({name, comp, extraCodePaths = []}) => {
   }, [name])
 
   return (
-    <Grid>
-      <Grid>{comp}</Grid>
+    <Grid sx={{pb: '2rem'}}>
+      <Grid>
+        <App header={<Header />} main={comp} footer={<Footer />} />
+      </Grid>
       <Grid>
         <APaper
           sx={{

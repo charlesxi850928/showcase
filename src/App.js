@@ -1,24 +1,20 @@
-import {Suspense} from 'react'
-import './App.css'
-import {Route} from 'react-router-dom'
 import {Grid, Box} from '@mui/material'
-import Home from './components/Home'
-import routes from './routes'
-import Header from './Header'
-import ABackdrop from './components/shared/ABackdrop'
-import Footer from './Footer'
+import PropTypes from 'prop-types'
 
-const App = () => (
+const App = ({header, main, footer}) => (
   <Box>
-    <Header />
-    <Grid role='main' aria-label='main info'>
-      <Suspense fallback={<ABackdrop />}>
-        <Route exact path='/' component={Home} />
-        {routes.map((r) => r.component && <Route key={r.name} path={r.path} component={r.component} />)}
-      </Suspense>
+    {header}
+    <Grid role='main' aria-label='main info' sx={{paddingBottom: '2rem'}}>
+      {main}
     </Grid>
-    <Footer />
+    {footer}
   </Box>
 )
+
+App.propTypes = {
+  header: PropTypes.node,
+  main: PropTypes.node,
+  footer: PropTypes.node
+}
 
 export default App

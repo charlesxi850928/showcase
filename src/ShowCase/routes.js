@@ -1,5 +1,4 @@
 import {lazy} from 'react'
-import {SHOW_CASE} from './constants'
 
 const TodoListWrapper = lazy(() => import('instancewrapper/TodoListWrapper'))
 const TimerInsWrapper = lazy(() => import('instancewrapper/TimerInsWrapper'))
@@ -27,11 +26,7 @@ const AnimationTeaCupInsWrapper = lazy(() => import('instancewrapper/AnimationTe
 const LoaderInsWrapper = lazy(() => import('instancewrapper/LoaderInsWrapper'))
 const CircularMenuInsWrapper = lazy(() => import('instancewrapper/CircularMenuInsWrapper'))
 
-// eslint-disable-next-line import/no-cycle
-const ShowCase = lazy(() => import('./components/ShowCase'))
-
 const routes = [
-  {name: SHOW_CASE, path: '/showCase', component: ShowCase},
   {
     name: 'Todo List',
     path: '/todoList',
@@ -126,10 +121,6 @@ const routes = [
     name: 'Calculator',
     path: '/calculator',
     component: CalculatorInsWrapper
-  },
-  {
-    name: 'Visualized',
-    path: '/components/VisualizedIns'
   },
   {
     name: 'AMap',
