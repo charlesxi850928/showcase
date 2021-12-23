@@ -1,0 +1,15 @@
+.footer {
+  margin-top: 2rem;
+  .signUp {
+    margin: 20px 0px;
+    .emailText {
+      width: calc(100% - 100px);
+    }
+    .button {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-top-right-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+  }
+}

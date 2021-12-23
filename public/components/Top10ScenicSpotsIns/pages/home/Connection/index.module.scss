@@ -1,0 +1,21 @@
+.scrollButtons {
+  position: absolute !important; // workaround for StyledEngineProvider injectFirst issue
+  top: -70px;
+  svg {
+    font-size: 3rem;
+  }
+}
+
+.leftButton {
+  right: 36px;
+}
+
+.rightButton {
+  right: 0px;
+}
+
+.itemWrapper {
+  width: 300px;
+  display: inline-block;
+  margin-right: 20px;
+}

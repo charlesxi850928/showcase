@@ -1,3 +1,5 @@
+import lodash from 'lodash'
+
 export function covertSeconds2MinSecs(seconds) {
   let mins = parseInt(seconds / 60, 10)
   mins = mins < 10 ? `0${mins}` : mins
@@ -34,4 +36,16 @@ export function stringAvatar(name) {
     },
     children: `${newName.split(' ')[0][0]}${newName.split(' ')[1][0]}`
   }
+}
+
+export function isEmptyObj(obj) {
+  return lodash.isEmpty(obj)
+}
+
+export function isUndefined(obj) {
+  if (typeof obj === 'undefined') {
+    return true
+  }
+
+  return false
 }
